@@ -1,0 +1,9 @@
+# Predicting the population of vapers in billions (in the US)
+
+year = [2015:2030]';
+yearsAfter2015 = year - 2015;
+populationBasedOnTime = .0001092 ./ (.002606 + .03929*exp(-.2357 .* yearsAfter2015));
+plot(yearsAfter2015, populationBasedOnTime);
+
+T = table(year, populationBasedOnTime)
+T(:, :)
